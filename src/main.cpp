@@ -35,7 +35,7 @@ Bautura& Bautura::operator=(const Bautura& rhs){
     if (this == &rhs) { //identity test
         return *this;   //item 11
     }
-    brand = rhs.brand;
+    brand = rhs.brand;  //item 12
     cantitate = rhs.cantitate;
     regiune = rhs.regiune;
     return *this; //item 10
@@ -52,7 +52,7 @@ BAlcoolica& BAlcoolica::operator=(const BAlcoolica& rhs) {
     if (this == &rhs) { //item 11
         return *this;
     }
-    Bautura::operator=(rhs);
+    Bautura::operator=(rhs); //item 12
     volum = rhs.volum;
     return *this;
 }
@@ -74,6 +74,7 @@ int main(){
 
     BAlcoolica ba1("Absolut", 1000, "Suedia", 40);
     BAlcoolica ba2;
+    BAlcoolica ba3("Saniuta", 500, "Romania", 28);
 
     ba1.print();
     cout << endl;
@@ -81,6 +82,10 @@ int main(){
     ba2 = ba1 ; //item 12
     ba2.print();
     cout << endl;
+    
+    ba3.print();
+    ba3 = ba1; //item 12
+    ba3.print();
 
     return 0;
 }
